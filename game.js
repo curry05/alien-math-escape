@@ -142,20 +142,22 @@
       generateQuestion();
     }
 
-    function mousePressed() {
-      if (screen === "start" || screen === "gameOver" || screen === "win") {
-        screen = "game";
-        score = 0;
-        level = 1;
-        userAnswer = "";
-        player.x = 50;
-        player.y = 300;
-        alien.x = 400;
-        alien.y = 300;
-        alien.speed = 1.5;
-        generateQuestion();
-      }
-    }
+function mousePressed() {
+  console.log("Canvas clicked at", mouseX, mouseY); // debug
+  if (screen === "start" || screen === "gameOver" || screen === "win") {
+    screen = "game";
+    score = 0;
+    level = 1;
+    userAnswer = "";
+    player.x = 50;
+    player.y = 300;
+    alien.x = 400;
+    alien.y = 300;
+    alien.speed = 1.5;
+    generateQuestion();
+  }
+}
+
 
     function keyTyped() {
       if (screen === "game") {
