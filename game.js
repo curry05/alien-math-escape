@@ -23,12 +23,12 @@ var alien = { // Initial
 };
 
 function setup() { // how the screen would look 
-    Canvas(800, 600);
+    Canvas(600, 400);
     Question();
 }
 
 function draw() {
-    background(157, 196, 150);
+    background(30, 30, 80);
 
     if (screen === "start") { // when the user starts 
         drawStart();
