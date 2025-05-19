@@ -148,6 +148,16 @@ function nextLevel() { // when the user reaches the next level
     Question(); 
 }
 
+function keyTyped() { // to get user's answer 
+    if (screen === "game") {
+        if (key >= '0' && key <= '9') {
+            userAnswer += key;
+        } else if (key === 'Backspace') {
+            userAnswer = userAnswer.slice(0, -1);
+        }
+    }
+}
+
 
 function keyPressed() { // checking for user input 
     if (screen === "start" && keyCode === ENTER) { 
