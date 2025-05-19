@@ -42,7 +42,7 @@ function draw() {
 }
 
 function drawStart() { // screeen when the user starts
-  background(30, 30, 80); // Space-like background
+  background(); // Space-like background
 
   fill(255);
   textSize(32);
