@@ -1,65 +1,69 @@
 // Alien Math Escape Game
-// Author: Karisha Negi
+// The user will move their circle until they know the answer and will go to the right when they know the answer ; WHILE ALL THIS THEY HAVE TO ESCAPE FROM THE GREEN ALIEN 
+// AS IT WILL BE FOLLOWING THEM. THERE ARE FIVE ROUNDS AND NO RETRY. 
 
-var screen = "start";
-var score = 0;
-var level = 1;
-var userAnswer = "";
-var question = "";
-var correctAnswer = 0;
+var screen = "start"; // for the start
+var score = 0; // initial score 
+var level = 1; // initial level 
+var userAnswer = ""; // EMPTY 
+var question = ""; // EMPTY 
+var correctAnswer = 0; // initially 
 
-var player = {
-    x: 50,
-    y: 300,
-    size: 30
+var player = { // Initial 
+    x: 50, // x position
+    y: 300, // y position 
+    size: 30 
 };
 
-var alien = {
-    x: 350,
-    y: 300,
+var alien = { // Initial 
+    x: 350, // x position
+    y: 300, // y position 
     size: 30,
-    speed: 1.5
+    speed: 1.0 // how fast it catches up with the user 
 };
 
-function setup() {
-    createCanvas(400, 400);
-    generateQuestion();
+function setup() { // how the screen would look 
+    Canvas(800, 600);
+    Question();
 }
 
 function draw() {
-    background(0);
+    background(157, 196, 150);
 
-    if (screen === "start") {
+    if (screen === "start") { // when the user starts 
         drawStart();
-    } else if (screen === "game") {
+    } else if (screen === "game") { // while the user is playing 
         drawGame();
-    } else if (screen === "win") {
+    } else if (screen === "win") { // when the user wins 
         drawWin();
-    } else if (screen === "gameOver") {
+    } else if (screen === "gameOver") { // when the user loses 
         drawGameOver();
     }
 }
 
-function drawStart() {
+function drawStart() { // screeen when the user starts 
     fill(255);
     textSize(24);
     textAlign(CENTER, CENTER);
-    text("👾 Alien Math Escape 👾", 200, 100);
-    textSize(16);
-    text("Press ENTER to Start", 200, 150);
+    text("👾 Alien Math Escape 👾", 200, 100); // HEADER 
+    textSize(18);
+    text("Use your math skills to escape the alien ship", width / 2, 160); // Game description 
+    text("Answer each question correctly to move right and escape.", width / 2, 190); // the user must move to the right with the right answer to win 
+    text("Avoid getting caught by making mistakes!", width / 2, 220); 
+    text("Press ENTER to Start", 200, 150); // WHEN USER PRESSES ENTER THE GAME STARTS 
 }
 
-function drawWin() {
+function drawWin() { // screen when user wins 
     background(0, 150, 50);
     fill(255);
     textSize(30);
     textAlign(CENTER, CENTER);
-    text("🎉 You Escaped! 🎉", 200, 150);
+    text("🎉 You Escaped! 🎉", 200, 150); 
     textSize(16);
     text("Final Score: " + score, 200, 200);
 }
 
-function drawGameOver() {
+function drawGameOver() { // screen when user loses
     background(150, 0, 0);
     fill(255);
     textSize(30);
@@ -70,15 +74,15 @@ function drawGameOver() {
     text("Score: " + score, 200, 220);
 }
 
-function drawGame() {
+function drawGame() { // screen when user is playing 
     fill(0, 255, 0);
-    ellipse(player.x, player.y, player.size, player.size);
+    ellipse(player.x, player.y, player.size, player.size); // player circle 
 
     fill(255, 0, 0);
-    ellipse(alien.x, alien.y, alien.size, alien.size);
+    ellipse(alien.x, alien.y, alien.size, alien.size); // alien circle 
 
     // Move alien toward player
-    alien.x += (player.x - alien.x) * 0.01 * alien.speed;
+    alien.x += (player.x - alien.x) * 0.01 * alien.speed; 
     alien.y += (player.y - alien.y) * 0.01 * alien.speed;
 
     // Player movement
@@ -110,7 +114,7 @@ function drawGame() {
         screen = "gameOver";
     }
 
-    // Win condition: go to right edge with correct answer
+    // Win condition: go to the right with the correct answer
     if (player.x > 370 && int(userAnswer) === correctAnswer) {
         score += 10;
         level++;
@@ -122,24 +126,24 @@ function drawGame() {
     }
 }
 
-function generateQuestion() {
-    var a = int(random(1, 10 + level));
-    var b = int(random(1, 10 + level));
-    correctAnswer = a + b;
-    question = a + " + " + b + " = ?";
+function Question() { // generating question 
+    var a = int(random(1, 10 + level)); // a random number being added to the level
+    var b = int(random(1, 10 + level)); // another random number being added to the level 
+    correctAnswer = a + b; 
+    question = a + " + " + b + " = ?"; // question to display 
 }
 
-function nextLevel() {
-    player.x = 50;
-    player.y = 300;
-    alien.x = 350;
-    alien.y = 300;
-    userAnswer = "";
-    alien.speed += 0.5;
-    generateQuestion();
+function nextLevel() { // when the user reaches the next level 
+    player.x = 50; // reset the initial x position 
+    player.y = 300; // reset the initial y position 
+    alien.x = 350; // reset the initial x position 
+    alien.y = 300; // reset the initial y position 
+    userAnswer = ""; // reset
+    alien.speed += 0.3; // alien's speed increases 
+    Question(); 
 }
 
-function keyTyped() {
+function keyTyped() { // 
     if (screen === "game") {
         if (key >= '0' && key <= '9') {
             userAnswer += key;
@@ -163,6 +167,6 @@ function keyPressed() {
         player.y = 300;
         alien.x = 350;
         alien.y = 300;
-        generateQuestion();
+        Question();
     }
 }
