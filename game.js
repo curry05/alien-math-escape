@@ -149,11 +149,20 @@ function nextLevel() { // when the user reaches the next level
 }
 
 
+function keyTyped() {
+    if (screen === "game") {
+        if (key >= '0' && key <= '9') {
+            userAnswer += key;
+        } else if (key === 'Backspace') {
+            userAnswer = userAnswer.slice(0, -1);
+        }
+    }
+}
+
 function keyPressed() {
     if (screen === "start" && keyCode === ENTER) {
         screen = "game";
     }
-
     if ((screen === "gameOver" || screen === "win") && keyCode === ENTER) {
         screen = "start";
         level = 1;
@@ -166,14 +175,4 @@ function keyPressed() {
         alien.y = 300;
         Question();
     }
-
-    // Handle number input during the game
-    if (screen === "game") {
-        if (keyCode >= 48 && keyCode <= 57) { // number keys 0-9
-            userAnswer += key;
-        } else if (keyCode === BACKSPACE) {
-            userAnswer = userAnswer.slice(0, -1); // remove last character
-        }
-    }
 }
-
