@@ -77,6 +77,8 @@ function drawGameOver() { // screen when user loses
     textSize(20);
     text("You were caught!",width/2, 180);
     text("Score: " + score, 200, 220);
+    text("Press ENTER to restart", 200, 250);
+
 }
 
 function drawGame() { // screen when user is playing 
