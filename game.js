@@ -44,7 +44,7 @@ function draw() {
 function drawStart() { // screeen when the user starts
   background(); // Space-like background
 
-  fill(255);
+  fill(0);
   textSize(32);
   textAlign(CENTER, CENTER);
   text("👾 Alien Math Escape 👾", width / 2, 100); // HEADER 
