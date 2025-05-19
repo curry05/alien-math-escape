@@ -42,7 +42,7 @@ function draw() {
 }
 
 function drawStart() {
-    background(30, 30, 80);
+    background(30,30,30);
     fill(255);
     textSize(24);
     textAlign(CENTER, CENTER);
