@@ -63,9 +63,9 @@ function drawWin() { // screen when user wins
     fill(255);
     textSize(30);
     textAlign(CENTER, CENTER);
-    text("🎉 You Escaped! 🎉", width / 2, 400); 
-    textSize(16);
-    text("Final Score: " + score, width / 2, 400);
+    text("🎉 You Escaped! 🎉", width/2, 150); 
+    textSize(20);
+    text("Final Score: " + score, width/2, 180);
 }
 
 function drawGameOver() { // screen when user loses
@@ -73,9 +73,9 @@ function drawGameOver() { // screen when user loses
     fill(255);
     textSize(30);
     textAlign(CENTER, CENTER);
-    text("💀 Game Over 💀", 200, 150);
-    textSize(16);
-    text("You were caught!", 200, 190);
+    text("💀 Game Over 💀", width/2, 150);
+    textSize(20);
+    text("You were caught!",width/2, 180);
     text("Score: " + score, 200, 220);
 }
 
