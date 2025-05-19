@@ -149,34 +149,36 @@ function nextLevel() { // when the user reaches the next level
 }
 
 
-function keyPressed() {
-    if (screen === "start" && keyCode === ENTER) {
-        screen = "game";
+function keyPressed(e) {
+  if (screen === "start" && keyCode === ENTER) {
+    screen = "game";
+  }
+
+  if ((screen === "gameOver" || screen === "win") && keyCode === ENTER) {
+    screen = "start";
+    level = 1;
+    score = 0;
+    userAnswer = "";
+    alien.speed = 1.0;
+    player.x = 50;
+    player.y = 300;
+    alien.x = 350;
+    alien.y = 300;
+    Question();
+  }
+
+  if (screen === "game") {
+    // Number input
+    if (key >= '0' && key <= '9') {
+      userAnswer += key;
     }
 
-    if ((screen === "gameOver" || screen === "win") && keyCode === ENTER) {
-        screen = "start";
-        level = 1;
-        score = 0;
-        userAnswer = "";
-        alien.speed = 1.0;
-        player.x = 50;
-        player.y = 300;
-        alien.x = 350;
-        alien.y = 300;
-        Question();
+    // Backspace
+    if (keyCode === BACKSPACE) {
+      userAnswer = userAnswer.slice(0, -1);
+      return false; // Prevent default browser behavior
     }
-
-    if (screen === "game") {
-        // Handle number input
-        if (key >= '0' && key <= '9') {
-            userAnswer += key;
-        }
-
-        // Handle Backspace
-        if (keyCode === BACKSPACE) {
-            userAnswer = userAnswer.slice(0, -1);
-        }
-    }
+  }
 }
+
 
