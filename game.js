@@ -23,7 +23,7 @@ var alien = { // Initial
 };
 
 function setup() { // how the screen would look 
-    Canvas(600, 400);
+    createCanvas(600, 400);
     Question();
 }
 
@@ -42,12 +42,19 @@ function draw() {
 }
 
 function drawStart() {
+    background(30, 30, 80);
     fill(255);
     textSize(24);
     textAlign(CENTER, CENTER);
-    text("👾 Alien Math Escape 👾", 200, 100);
+    text("👾 Alien Math Escape 👾", width/2, 100);
+
+    textSize(14);
+    text("Solve the math question, type the answer,", width/2, 150);
+    text("and move RIGHT when you know the answer!", width/2, 170);
+    text("Avoid the green alien chasing you!", width/2, 190);
+    
     textSize(16);
-    text("Press ENTER to Start", 200, 150);
+    text("Press ENTER to Start", width/2, 240);
 }
 
 
