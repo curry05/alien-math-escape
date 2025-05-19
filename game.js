@@ -41,17 +41,21 @@ function draw() {
     }
 }
 
-function drawStart() { // screeen when the user starts 
-    fill(255);
-    textSize(24);
-    textAlign(CENTER, CENTER);
-    text("👾 Alien Math Escape 👾", 200, 100); // HEADER 
-    textSize(18);
-    text("Use your math skills to escape the alien ship", width / 2, 160); // Game description 
-    text("Answer each question correctly to move right and escape.", width / 2, 210); // the user must move to the right with the right answer to win 
-    text("Avoid getting caught by making mistakes!", width / 2, 240); 
-    text("Press ENTER to Start", 200, 250); // WHEN USER PRESSES ENTER THE GAME STARTS 
+function drawStart() { // screeen when the user starts
+  background(30, 30, 80); // Space-like background
+
+  fill(255);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+  text("👾 Alien Math Escape 👾", width / 2, 100); // HEADER 
+
+  textSize(18);
+  text("Use your math skills to escape the alien ship!", width / 2, 160); // Game description 
+  text("Answer each question correctly to move right and escape.", width / 2, 190); // the user must move to the right with the right answer to win 
+  text("Avoid getting caught by making mistakes!", width / 2, 220);
+  text("Press ENTER to begin...", width / 2, 270); // WHEN USER PRESSES ENTER THE GAME STARTS 
 }
+
 
 function drawWin() { // screen when user wins 
     background(0, 150, 50);
