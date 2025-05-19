@@ -48,9 +48,9 @@ function drawStart() { // screeen when the user starts
     text("👾 Alien Math Escape 👾", 200, 100); // HEADER 
     textSize(18);
     text("Use your math skills to escape the alien ship", width / 2, 160); // Game description 
-    text("Answer each question correctly to move right and escape.", width / 2, 190); // the user must move to the right with the right answer to win 
-    text("Avoid getting caught by making mistakes!", width / 2, 220); 
-    text("Press ENTER to Start", 200, 150); // WHEN USER PRESSES ENTER THE GAME STARTS 
+    text("Answer each question correctly to move right and escape.", width / 2, 210); // the user must move to the right with the right answer to win 
+    text("Avoid getting caught by making mistakes!", width / 2, 240); 
+    text("Press ENTER to Start", 200, 250); // WHEN USER PRESSES ENTER THE GAME STARTS 
 }
 
 function drawWin() { // screen when user wins 
@@ -143,22 +143,13 @@ function nextLevel() { // when the user reaches the next level
     Question(); 
 }
 
-function keyTyped() { // 
-    if (screen === "game") {
-        if (key >= '0' && key <= '9') {
-            userAnswer += key;
-        } else if (key === 'Backspace') {
-            userAnswer = userAnswer.slice(0, -1);
-        }
-    }
-}
 
-function keyPressed() {
-    if (screen === "start" && keyCode === ENTER) {
-        screen = "game";
+function keyPressed() { // checking for user input 
+    if (screen === "start" && keyCode === ENTER) { 
+        screen = "game"; // screen changes to game 
     }
     if ((screen === "gameOver" || screen === "win") && keyCode === ENTER) {
-        screen = "start";
+        screen = "start"; // restart 
         level = 1;
         score = 0;
         userAnswer = "";
