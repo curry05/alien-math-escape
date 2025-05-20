@@ -76,7 +76,7 @@ function drawGameOver() { // screen when user loses
     text("💀 Game Over 💀", width/2, 150);
     textSize(20);
     text("You were caught!",width/2, 180);
-    text("Score: " + score, width/2e, 200, 220);
+    text("Score: " + score, width/2, 200, 220);
     text("Press ENTER to restart", width/2, 250);
 
 }
