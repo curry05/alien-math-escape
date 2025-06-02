@@ -54,7 +54,7 @@ function drawStart() {
     text("Avoid the green alien chasing you!", width/2, 190);
     
     textSize(16);
-    text("Press ENTER to Start", width/2, 240);
+   // text("Press ENTER to Start", width/2, 240);
 }
 
 
