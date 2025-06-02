@@ -54,7 +54,7 @@ function drawStart() {
     text("Avoid the green alien chasing you!", width/2, 190);
     
     textSize(16);
-   // text("Press ENTER to Start", width/2, 240);
+    text("Press ENTER to Start", width/2, 240);
 }
 
 
@@ -92,7 +92,6 @@ function drawGame() { // screen when user is playing
 
     // myMusic = new sound("kahoot.mp3"); 
     // myMusic.play();
-    Question();
     // Move alien toward player
     alien.x += (player.x - alien.x) * 0.01 * alien.speed; 
     alien.y += (player.y - alien.y) * 0.01 * alien.speed;
