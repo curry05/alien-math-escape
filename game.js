@@ -90,9 +90,9 @@ function drawGame() { // screen when user is playing
     fill(255, 0, 0);
     ellipse(alien.x, alien.y, alien.size, alien.size); // alien circle 
 
-    myMusic = new sound("kahoot.mp3"); 
-    myMusic.play();
-
+    // myMusic = new sound("kahoot.mp3"); 
+    // myMusic.play();
+    Question();
     // Move alien toward player
     alien.x += (player.x - alien.x) * 0.01 * alien.speed; 
     alien.y += (player.y - alien.y) * 0.01 * alien.speed;
