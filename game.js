@@ -23,7 +23,7 @@ var alien = { // Initial
 };
 
 function setup() { // how the screen would look 
-    createCanvas(600, 400);
+    createFirstCanvas(600, 400);
     Question();
 }
 
