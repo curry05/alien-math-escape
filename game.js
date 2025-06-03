@@ -90,8 +90,6 @@ function drawGame() { // screen when user is playing
     fill(255, 0, 0);
     ellipse(alien.x, alien.y, alien.size, alien.size); // alien circle 
 
-    // myMusic = new sound("kahoot.mp3"); 
-    // myMusic.play();
     // Move alien toward player
     alien.x += (player.x - alien.x) * 0.01 * alien.speed; 
     alien.y += (player.y - alien.y) * 0.01 * alien.speed;
@@ -150,7 +148,7 @@ function nextLevel() { // when the user reaches the next level
     alien.x = 350; // reset the initial x position 
     alien.y = 300; // reset the initial y position 
     userAnswer = ""; // reset
-    alien.speed += 0.1; // alien's speed increases 
+    alien.speed += 0.2; // alien's speed increases 
     Question(); 
 }
 
@@ -165,7 +163,7 @@ function keyPressed() {
     level = 1;
     score = 0;
     userAnswer = "";
-    alien.speed = 0.9;
+    alien.speed = 0.2;
     player.x = 50;
     player.y = 300;
     alien.x = 350;
