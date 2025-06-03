@@ -23,7 +23,7 @@ var alien = { // Initial
 };
 
 function setup() { // how the screen would look 
-    createCanvas(400, 400);
+    createCanvas(600, 400);
     Question();
 }
 
@@ -155,7 +155,7 @@ function nextLevel() { // when the user reaches the next level
 }
 
 
-function keyPressed(e) {
+function keyPressed() {
   if (screen === "start" && keyCode === ENTER) {
     screen = "game";
   }
